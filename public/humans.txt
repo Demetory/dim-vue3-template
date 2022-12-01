@@ -1,0 +1,10 @@
+# humanstxt.org/
+
+/* TEAM */
+Demetrey <demetrey.ru>
+
+/* SITE */
+Last update: 2022/11/24
+Standards: HTML5, CSS3/SCSS, TypeScript, Script Setup SFC
+Components: Vite3, Vue3, Pinia, ESlint, Prettier, VueUse, Axios
+Software: VSCode

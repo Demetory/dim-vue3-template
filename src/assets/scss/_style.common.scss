@@ -1,0 +1,136 @@
+/* ==========================================================================
+   Common Styles
+   ========================================================================== */
+
+// Core
+html {
+  display: flex;
+  flex: 1;
+  font-size: 62.5%;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-width: grid.$min-width;
+  min-height: grid.$min-height;
+  color: colors.$font-black;
+  background-color: colors.$white;
+  font-family: "Ubuntu", sans-serif;
+  font-style: normal;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  display: flex;
+  flex: 1;
+  min-height: 100%;
+  border: solid grid.$gap colors.$bg-white;
+  background-color: colors.$white;
+
+  @media (max-width: 1280px) {
+    flex-direction: column;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: grid.$gap;
+  flex: 1;
+}
+
+// Typo
+h1 {
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+p,
+li {
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+// Links
+a {
+  color: colors.$link-main;
+  transition: color grid.$transition;
+  text-decoration: none;
+
+  &:hover {
+    color: colors.$link-main-hover;
+  }
+
+  &:active,
+  &.router-link-exact-active {
+    color: colors.$link-main-active;
+    cursor: default;
+    text-decoration: none;
+  }
+}
+
+// Buttons
+.btn {
+  margin: 0.6rem 0;
+  padding: 0.6rem 1.2rem;
+  color: colors.$font-black;
+  background-color: transparent;
+  border: grid.$border-solid colors.$link-main;
+  border-radius: grid.$border-radius;
+  transition: color grid.$transition, background-color grid.$transition;
+  cursor: pointer;
+
+  &:hover {
+    color: colors.$white;
+    background-color: colors.$link-main;
+  }
+
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+
+// Inputs
+.input {
+  padding: 0.6rem 1.2rem;
+  max-width: 10rem;
+  color: colors.$font-black;
+  background-color: transparent;
+  border: grid.$border-solid colors.$link-main;
+  border-radius: grid.$border-radius;
+  transition: border-color grid.$transition;
+  outline: 0;
+
+  &:hover,
+  &:focus {
+    border-color: colors.$font-black;
+  }
+}
+
+// Selection Highlight
+::selection {
+  background-color: colors.$selection-bg;
+  text-shadow: none;
+}
+
+// Page Transition
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity grid.$transition;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
