@@ -5,14 +5,11 @@ import { useRoute } from "vue-router";
 
 // Modules
 import axios from "axios";
+import { initApp } from "@/modules/initApp";
 import { useExamplePiniaStore } from "@/stores/examplePinia";
 
 // Components
-import TemplateHeader from "@/components/template/TemplateHeader.vue";
-
-// Composables
-import { exampleLogo } from "@/modules/exampleLogo";
-import { useConsoleImage } from "@/composables/useConsoleImage";
+import MoleculeHeader from "@/components/molecule/MoleculeHeader.vue";
 
 // Data
 const route = useRoute();
@@ -22,7 +19,7 @@ const exampleDataError = ref(null);
 
 // Hooks
 onBeforeMount(() => {
-  useConsoleImage(exampleLogo);
+  initApp();
   getExampleData();
 });
 
@@ -49,7 +46,7 @@ const getExampleData = () => {
 </script>
 
 <template>
-  <TemplateHeader />
+  <MoleculeHeader />
 
   <RouterView v-slot="{ Component }">
     <main :class="`page ${getPageName}`">

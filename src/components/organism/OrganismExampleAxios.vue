@@ -6,6 +6,7 @@ import { ref } from "vue";
 import axios from "axios";
 
 // Components
+import AtomButton from "@/components/atom/AtomButton.vue";
 import IconModule from "@/components/atom/IconModule.vue";
 import TemplateSlot from "@/components/template/TemplateSlot.vue";
 
@@ -45,8 +46,8 @@ const clearUserInfo = () => {
     <template #heading>Axios Example</template>
     <template #content>
       <p>
-        <button v-if="!userInfo" class="btn" @click.stop="getUserInfo">Get Data</button>
-        <button v-else class="btn" @click.stop="clearUserInfo">Clear Data</button>
+        <AtomButton v-if="!userInfo" @click.stop="getUserInfo">Get Data</AtomButton>
+        <AtomButton v-else @click.stop="clearUserInfo">Clear Data</AtomButton>
       </p>
       <p v-if="userLoad">Loading</p>
       <p v-if="userInfo">{{ userInfo }}</p>

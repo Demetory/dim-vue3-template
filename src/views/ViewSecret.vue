@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <article>
     <h1>Secret Page</h1>
-  </div>
+  </article>
 </template>

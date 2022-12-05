@@ -22,7 +22,7 @@ const edges = [
           :key="`edge-${index}`"
           :class="['cube-edge', `cube-${edge.name}`, `cube-${edge.className}`]"
         >
-          <img :src="useImage(edge.img)" />
+          <img alt="Dim Vue 3 Template" :src="useImage(edge.img)" />
         </span>
       </div>
     </router-link>
