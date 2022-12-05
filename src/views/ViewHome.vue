@@ -1,16 +1,16 @@
 <script setup lang="ts">
 // Components
-import OrganismHomeAbout from "@/components/organism/OrganismHomeAbout.vue";
-import OrganismHomeModules from "@/components/organism/OrganismHomeModules.vue";
-import OrganismHomeSupport from "@/components/organism/OrganismHomeSupport.vue";
-import OrganismHomeTooling from "@/components/organism/OrganismHomeTooling.vue";
+import TemplateHomeAbout from "@/components/template/TemplateHomeAbout.vue";
+import TemplateHomeModules from "@/components/template/TemplateHomeModules.vue";
+import TemplateHomeSupport from "@/components/template/TemplateHomeSupport.vue";
+import TemplateHomeTooling from "@/components/template/TemplateHomeTooling.vue";
 </script>
 
 <template>
-  <div class="page-container">
-    <OrganismHomeAbout />
-    <OrganismHomeTooling />
-    <OrganismHomeModules />
-    <OrganismHomeSupport />
-  </div>
+  <article>
+    <TemplateHomeAbout />
+    <TemplateHomeTooling />
+    <TemplateHomeModules />
+    <TemplateHomeSupport />
+  </article>
 </template>

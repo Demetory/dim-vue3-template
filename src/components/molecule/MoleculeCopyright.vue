@@ -9,7 +9,7 @@ import { useExamplePiniaStore } from "@/stores/examplePinia";
 import AtomLink from "@/components/atom/AtomLink.vue";
 
 // Composables
-import { useDateTZ } from "@/composables/useDate";
+import { useDateTZ, useDateToRoman } from "@/composables/useDate";
 
 // Data
 const examplePiniaStore = useExamplePiniaStore();
@@ -18,7 +18,7 @@ const dateTZ: Date = useDateTZ(date, "Asia/Jakarta");
 
 // Computed Properties
 const getYear = computed(() => {
-  return new String(dateTZ.getFullYear());
+  return new String(useDateToRoman(dateTZ.getFullYear()));
 });
 
 const getCopyright = computed(() => {

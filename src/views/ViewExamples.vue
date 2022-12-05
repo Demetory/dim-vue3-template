@@ -8,11 +8,9 @@ import OrganismExampleVueUse from "@/components/organism/OrganismExampleVueUse.v
 </script>
 
 <template>
-  <div class="page-container">
-    <div class="page-container">
-      <OrganismExampleVueUse />
-      <OrganismExampleAxios />
-      <OrganismExamplePinia />
-    </div>
-  </div>
+  <article>
+    <OrganismExampleVueUse />
+    <OrganismExampleAxios />
+    <OrganismExamplePinia />
+  </article>
 </template>
