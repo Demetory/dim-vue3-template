@@ -42,8 +42,10 @@ function useDateToRoman(num: number) {
     "IX",
   ];
 
-  // @ts-expect-error: wrong type info
-  while (iterations--) result = (key[+digits.pop() + iterations * 10] || "") + result;
+  while (iterations--) {
+    const digit: string | undefined = digits!.pop();
+    result = (key[+digit! + iterations * 10] || "") + result;
+  }
 
   return Array(+digits.join("") + 1).join("M") + result;
 }

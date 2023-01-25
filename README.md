@@ -8,6 +8,7 @@
 
 - Full configured and ready
 - No complex || heavy dependencies
+- Google Lighthouse Reports are 100% in green zone
 - Atomic Design Patter
 - Pre-configured HTML index page (including SEO-metatags and No-Script section)
 - Prepared public folder (icons, robots.txt, htaccess, humans.txt, etc)
@@ -25,13 +26,14 @@
 <br/>
 <br/>
 ![image](/public/cover.jpg)
+![image](/public/images/lighthouse.png)
 
 <br/><br/>
 
 ## Requirements
 
-- [Node.js](https://nodejs.org/en/): >= 16.11.0
-- [npm](https://www.npmjs.com/): >= 6.32.4
+- [Node.js](https://nodejs.org/en/): >= 16.17.0
+- [npm](https://www.npmjs.com/): >= 9.2.0
   <br/><br/>
 
 ## Recommended IDE
