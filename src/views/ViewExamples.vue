@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// Modules
-
 // Components
 import OrganismExampleAxios from "@/components/organism/OrganismExampleAxios.vue";
 import OrganismExamplePinia from "@/components/organism/OrganismExamplePinia.vue";

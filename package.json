@@ -1,10 +1,23 @@
 {
   "name": "dim-vue3-template",
-  "version": "0.0.1",
+  "description": "Vue3 Starter Template",
+  "author": "Demetory",
+  "version": "0.0.3",
   "engines": {
-    "node": ">= 16.11.0",
-    "npm": ">= 6.32.4"
+    "node": ">= 16.17.0",
+    "npm": ">= 9.2.0"
   },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
