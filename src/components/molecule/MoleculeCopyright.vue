@@ -1,37 +1,26 @@
 <script setup lang="ts">
-// Vue Core
+// Core
 import { computed } from "vue";
-
 // Modules
 import { useExamplePiniaStore } from "@/stores/examplePinia";
 import { useDateTZ, useDateToRoman } from "@/composables/useDate";
-
 // Components
 import AtomLink from "@/components/atom/AtomLink.vue";
 
 // Data
 const examplePiniaStore = useExamplePiniaStore();
-const date: Date = new Date();
-const dateTZ: Date = useDateTZ(date, "Asia/Jakarta");
+const dateTZ: Date = useDateTZ(new Date(), "Asia/Jakarta");
 
-// Computed Properties
-const getYear = computed(() => {
+// Computed properties
+const computedYear = computed(() => {
   return new String(useDateToRoman(dateTZ.getFullYear()));
-});
-
-const getCopyright = computed(() => {
-  return examplePiniaStore.copyright;
 });
 </script>
 
 <template>
   <p class="copyright">
-    {{ getYear }} &copy;
-
-    <template v-for="(item, index) in getCopyright" :key="`link-${index}`">
-      <AtomLink :link="item" />
-      <span v-if="index !== Object.keys(getCopyright).length - 1"> | </span>
-    </template>
+    {{ computedYear }} &copy; <AtomLink :link="examplePiniaStore.getLink('link-homepage')" /> |
+    <AtomLink :link="examplePiniaStore.getLink('link-repo')" />
   </p>
 </template>
 

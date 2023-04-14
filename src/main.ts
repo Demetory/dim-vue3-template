@@ -4,6 +4,8 @@ import App from "@/App.vue";
 
 // Pinia
 import { createPinia } from "pinia";
+
+// Router
 import router from "@/router";
 
 // Axios
@@ -11,7 +13,8 @@ import axios from "axios";
 import VueAxios from "vue-axios";
 
 // Global CSS
-import "@/assets/scss/index.scss";
+import "@/assets/scss/_core/_index.scss";
+import "@/assets/scss/theme/style.theme.scss";
 
 // Create App
 const app = createApp(App);

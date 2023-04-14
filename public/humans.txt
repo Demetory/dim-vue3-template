@@ -1,10 +1,17 @@
 # humanstxt.org/
 
+/* WHATS THIS ABOUT */
+Vite + Vue Starter Template
+
 /* TEAM */
 Demetrey <demetrey.ru>
 
-/* SITE */
-Last update: 2023/01/25
-Standards: HTML5, CSS3/SCSS, TypeScript, Script Setup SFC
-Components: Vite3, Vue3, Pinia, ESlint, Prettier, VueUse, Axios
+/* TECHNOLOGIES */
 Software: VSCode
+Standards: HTML5, CSS3/SCSS, JavaScript ES2019, TypeScript 5, Script Setup SFC
+Engines: Node 18, NPM 9
+Components: Vite 4, Vue 3, Pinia 2, VueUse 10, Axios, ESlint 8, Prettier 2
+
+/* PROJECT UPDATES */
+Created: 2022-12-01 18-40
+Last modified: 2023-04-14 19-21

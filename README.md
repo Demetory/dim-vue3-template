@@ -1,45 +1,36 @@
 # Vue 3 Starter
 
-- [Vue 3](https://vuejs.org/) + [Vite](https://vitejs.dev/) Minimalistic Starter Template
-- Uses [TypeScript](https://www.typescriptlang.org/) and [Script Setup SFC](https://vuejs.org/api/sfc-script-setup.html)
+- [Vue 3](https://vuejs.org/) + [Vite 4](https://vitejs.dev/) Minimalistic Starter Template
+- Built with [TypeScript 5](https://www.typescriptlang.org/) and [Script Setup SFC](https://vuejs.org/api/sfc-script-setup.html)
   <br/><br/>
 
 ## Features
 
-- Full configured and ready
 - No complex || heavy dependencies
 - Google Lighthouse Reports are 100% in green zone
-- Atomic Design Patter
-- Pre-configured HTML index page (including SEO-metatags and No-Script section)
-- Prepared public folder (icons, robots.txt, htaccess, humans.txt, etc)
-- CSS normalization
-- SCSS Maps and Modules in global scope
-- Configured router (including transitions, navigation guards and 404 page)
+- Atomic Design Pattern
+- Configured public folder (icons, robots.txt, htaccess, humans.txt, etc)
+- CSS normalization + SCSS Mixins & Maps
+- Configured router (including transitions and navigation guards)
 - Simple code examples for Storage, Composables, TypeScript, Modules
-- ESLint + Prettier for better code quality
+- [ESLint 8](https://eslint.org/) + [Prettier 2](https://prettier.io/) for better code quality
 - Cypress + Vitest for testing
-  <br/><br/>
 
 ## Preview
 
 [Live Demo](http://vue3-template.demetrey.ru/)
-<br/>
-<br/>
-![image](/public/cover.jpg)
-![image](/public/images/lighthouse.png)
 
-<br/><br/>
+![image](/public/images/icons/cover.jpg)
+![image](/public/images/deco/lighthouse.png)
 
-## Requirements
+## Engines
 
-- [Node.js](https://nodejs.org/en/): >= 16.17.0
-- [npm](https://www.npmjs.com/): >= 9.2.0
-  <br/><br/>
+- [Node.js](https://nodejs.org/en/): >= 18.14.2
+- [npm](https://www.npmjs.com/): >= 9.5.0
 
 ## Recommended IDE
 
 - [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
-  <br/><br/>
 
 ## Installed Modules
 
@@ -66,29 +57,25 @@ git clone https://github.com/Demetory/dim-vue3-template
 npm install
 ```
 
-Update deps if needed
+### Update deps if needed
 
 ```bash
 npm update
 ```
 
-### Development
-
-Start the development server on http://localhost:5173
+### Start the development server on http://localhost:5173
 
 ```bash
 npm run dev
 ```
 
-### Build for Production
-
-Build with type-check:
+### Build with type-check
 
 ```bash
 npm run build
 ```
 
-or just for build only
+### Build only
 
 ```bash
 npm run build-only
@@ -104,21 +91,17 @@ npm run lint
 npm run type-check
 ```
 
-### Testing
-
-Vitest unit testing
+### Unit Test
 
 ```bash
 npm run test:unit
 ```
 
-Cypress e2e-testing
+### E2E Test
 
 ```bash
 npm run test:e2e
 ```
-
-<br/><br/>
 
 ## License
 

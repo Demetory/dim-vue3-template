@@ -1,33 +1,22 @@
-// Import Core
-import { nextTick } from "vue";
+// Core
 import { createRouter, createWebHistory } from "vue-router";
-
 // Components
-import HomeView from "@/views/ViewHome.vue";
+import ViewHome from "@/views/ViewHome.vue";
 
 // Data
-const defaultTitle = "Dim Vue3 Template";
+const defaultTitle = import.meta.env.VITE_APP_TITLE;
 const isAuthenticated = false;
 
 // Routes
 const routes = [
   {
-    path: "/:pathMatch(.*)*",
-    name: "NotFound",
-    // Generates a separate chunk for this route which is lazy-loaded when the route is visited
-    component: () => import("@/views/ViewNotFound.vue"),
-    meta: {
-      title: "Page not Found",
-    },
-  },
-  {
     path: "/",
-    name: "home",
-    component: HomeView,
+    name: "ViewHome",
+    component: ViewHome,
   },
   {
     path: "/examples",
-    name: "examples",
+    name: "ViewExamples",
     component: () => import("@/views/ViewExamples.vue"),
     meta: {
       title: "Code Examples",
@@ -35,7 +24,7 @@ const routes = [
   },
   {
     path: "/secret",
-    name: "secret",
+    name: "ViewSecret",
     component: () => import("@/views/ViewSecret.vue"),
     meta: {
       title: "Secret Page",
@@ -44,10 +33,18 @@ const routes = [
   },
   {
     path: "/login",
-    name: "login",
+    name: "ViewLogin",
     component: () => import("@/views/ViewLogin.vue"),
     meta: {
       title: "Login",
+    },
+  },
+  {
+    path: "/:catchAll(.*)*",
+    name: "PageNotFound",
+    component: () => import("@/views/ViewNotFound.vue"),
+    meta: {
+      title: "Page not Found",
     },
   },
 ];
@@ -67,14 +64,12 @@ const router = createRouter({
 
 // Navigation Guards
 router.afterEach((to) => {
-  nextTick(() => {
-    document.title = to.meta.title ? defaultTitle + " | " + to.meta.title : defaultTitle;
-  });
+  document.title = typeof to.meta.title === "string" ? defaultTitle + " | " + to.meta.title : defaultTitle;
 });
 
 router.beforeEach((to) => {
-  if (to.name !== "login" && to.meta.auth && !isAuthenticated) {
-    return { name: "login" };
+  if (to.name !== "ViewLogin" && to.meta.auth && !isAuthenticated) {
+    return { name: "ViewLogin" };
   }
 });
 

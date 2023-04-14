@@ -17,9 +17,9 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `
-          @use "./src/assets/scss/_vars/var.colors.scss" as colors;
-          @use "./src/assets/scss/_vars/var.grid.scss" as grid;
-          @import "./src/assets/scss/_vars/var.mixins.scss";
+          @use "./src/assets/scss/theme/var.colors.scss" as colors;
+          @use "./src/assets/scss/theme/var.grid.scss" as grid;
+          @import "./src/assets/scss/theme/var.mixins.scss";
        `,
       },
     },

@@ -1,21 +1,21 @@
 /* ==========================================================================
-   STYLES: Theme
+   STYLES: Main App Theme
 
-   Main App Theme.
+   Imported through ./src/main.ts as global scope
    Feel free to customize your app ^-^
    ========================================================================== */
 
 // Core
 body {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-// App Border
+// App border around
 html,
 body {
   &::before,
   &::after {
-    content: "";
+    content: " ";
     backface-visibility: hidden;
     position: fixed;
     background-color: colors.$bg-border-app;
@@ -73,7 +73,6 @@ body {
 
 // Containers
 #app {
-  display: flex;
   flex-direction: row;
 
   @media screen and (max-width: 1024px) {
@@ -92,11 +91,9 @@ article {
 
 // Typo
 h1 {
-  font-weight: 700;
-  font-size: 3rem;
+  @include font(3rem, 3rem, 700);
 }
 
 h2 {
-  font-weight: 700;
-  font-size: 2.4rem;
+  @include font(2.4rem, 2.4rem, 700);
 }

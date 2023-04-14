@@ -12,5 +12,5 @@ defineProps({
 </script>
 
 <template>
-  <a :href="link.url" target="_blank" rel="noopener noreferrer">{{ link.text }}</a>
+  <a :href="link.url" :title="link.text" target="_blank" rel="noopener noreferrer">{{ link.text }}</a>
 </template>

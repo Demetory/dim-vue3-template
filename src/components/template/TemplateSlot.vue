@@ -1,8 +1,8 @@
 <template>
   <section class="item">
-    <i class="item__icon">
+    <span class="item__icon">
       <slot name="icon"></slot>
-    </i>
+    </span>
     <div class="item__body">
       <h2 class="item__head">
         <slot name="heading"></slot>
@@ -14,8 +14,8 @@
 
 <style scoped lang="scss">
 .item {
-  display: flex;
   position: relative;
+  display: flex;
   margin-top: 0;
   padding-left: 80px;
 
@@ -25,8 +25,8 @@
 
   &::before,
   &::after {
-    content: " ";
     position: absolute;
+    content: " ";
     left: 25px;
     border-left: 1px solid colors.$grey;
     height: calc(50% - 25px);
@@ -72,8 +72,5 @@
       line-height: 2.4rem;
     }
   }
-}
-
-@media (min-width: 1024px) {
 }
 </style>

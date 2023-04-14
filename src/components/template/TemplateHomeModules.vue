@@ -1,42 +1,33 @@
 <script setup lang="ts">
+// Modules
+import { useExamplePiniaStore } from "@/stores/examplePinia";
 // Components
-import IconModule from "@/components/atom/IconModule.vue";
+import AtomIcon from "@/components/atom/AtomIcon.vue";
+import AtomLink from "@/components/atom/AtomLink.vue";
 import TemplateSlot from "@/components/template/TemplateSlot.vue";
+
+// Data
+const examplePiniaStore = useExamplePiniaStore();
 </script>
 
 <template>
   <TemplateSlot>
     <template #icon>
-      <IconModule />
+      <AtomIcon name="module" />
     </template>
     <template #heading>Installed Modules</template>
     <template #content>
       <ul>
-        <li>
-          Routing:
-          <a href="https://router.vuejs.org/" target="_blank" rel="noopener">Vue Router</a>
-        </li>
-        <li>
-          Vue Store:
-          <a href="https://pinia.vuejs.org/" target="_blank" rel="noopener">Pinia</a>
-        </li>
-        <li>
-          Vue Composition Utilities:
-          <a href="https://vueuse.org/" target="_blank" rel="noopener">VueUse</a>
-        </li>
-        <li>
-          Promise based HTTP client:
-          <a href="https://axios-http.com/" target="_blank" rel="noopener">Axios</a>
-        </li>
-        <li>
-          CSS Preprocessor:
-          <a href="https://sass-lang.com/" target="_blank" rel="noopener">Sass</a>
-        </li>
+        <li>Routing: <AtomLink :link="examplePiniaStore.getLink('link-router')" /></li>
+        <li>Storage: <AtomLink :link="examplePiniaStore.getLink('link-storage')" /></li>
+        <li>Utilities: <AtomLink :link="examplePiniaStore.getLink('link-utils')" /></li>
+        <li>Promise based HTTP client: <AtomLink :link="examplePiniaStore.getLink('link-axios')" /></li>
+        <li>CSS Preprocessor: <AtomLink :link="examplePiniaStore.getLink('link-sass')" /></li>
         <li>
           Code quality:
-          <a href="https://eslint.org/" target="_blank" rel="noopener">ESLint</a>
+          <AtomLink :link="examplePiniaStore.getLink('link-eslint')" />
           +
-          <a href="https://prettier.io/" target="_blank" rel="noopener">Prettier</a>
+          <AtomLink :link="examplePiniaStore.getLink('link-prettier')" />
         </li>
       </ul>
     </template>

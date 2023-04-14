@@ -1,28 +1,32 @@
 <script setup lang="ts">
+// Modules
+import { useExamplePiniaStore } from "@/stores/examplePinia";
 // Components
-import IconDocumentation from "@/components/atom/IconDocumentation.vue";
+import AtomIcon from "@/components/atom/AtomIcon.vue";
+import AtomLink from "@/components/atom/AtomLink.vue";
 import TemplateSlot from "@/components/template/TemplateSlot.vue";
+
+// Data
+const examplePiniaStore = useExamplePiniaStore();
 </script>
 
 <template>
   <TemplateSlot>
     <template #icon>
-      <IconDocumentation />
+      <AtomIcon name="documentation" />
     </template>
     <template #heading>Vue + Vite Starter Template</template>
     <template #content>
       <p>
-        This project is served and bundled with
-        <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a>, uses
-        <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener">TypeScript</a> for strong typing and
-        <a href="https://vuejs.org/api/sfc-script-setup.html" target="_blank" rel="noopener">Script Setup SFC</a>.
+        This project is served and bundled with <AtomLink :link="examplePiniaStore.getLink('link-vite')" />, uses
+        <AtomLink :link="examplePiniaStore.getLink('link-ts')" /> for strong typing and
+        <AtomLink :link="examplePiniaStore.getLink('link-sfc')" />.
       </p>
       <p>
-        Vue’s
-        <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
-        provides you with all information you need to get started.
+        Vue’s <AtomLink :link="examplePiniaStore.getLink('link-vue')" /> provides you with all information you need to
+        get started.
       </p>
-      <p>Designed with <a href="https://vuefront.com/develop/" target="_blank" rel="noopener">Atomic Pattern</a>.</p>
+      <p>Designed with <AtomLink :link="examplePiniaStore.getLink('link-pattern')" />.</p>
     </template>
   </TemplateSlot>
 </template>

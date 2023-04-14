@@ -1,10 +1,10 @@
 {
   "name": "Dim-Vue3-Template",
-  "short_name": "Dim-Vue3",
+  "short_name": "Dim-Vue3-Template",
   "description": "Vue 3 + Vite Starter Template",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "images/icons/icon.png",
       "type": "image/png",
       "sizes": "192x192"
     }

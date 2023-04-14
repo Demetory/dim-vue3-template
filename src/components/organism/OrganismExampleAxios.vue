@@ -1,58 +1,46 @@
 <script setup lang="ts">
-// Vue Core
-import { ref } from "vue";
-
+// Core
+import { computed } from "vue";
 // Modules
-import axios from "axios";
-
+import { useExamplePiniaStore } from "@/stores/examplePinia";
 // Components
 import AtomButton from "@/components/atom/AtomButton.vue";
-import IconModule from "@/components/atom/IconModule.vue";
+import AtomIcon from "@/components/atom/AtomIcon.vue";
+import AtomLink from "@/components/atom/AtomLink.vue";
 import TemplateSlot from "@/components/template/TemplateSlot.vue";
 
 // Data
-const userInfo = ref(null);
-const userLoad = ref(false);
-const userError = ref(null);
+const examplePiniaStore = useExamplePiniaStore();
 
-// Methods
-const getUserInfo = () => {
-  userLoad.value = true;
-  axios
-    .get("/json/exampleUser.json")
-    .then((response) => {
-      userInfo.value = response.data;
-      userLoad.value = false;
-      userError.value = null;
-    })
-    .catch((error) => {
-      userLoad.value = false;
-      userError.value = error;
-    });
-};
+// Computed properties
+const computedUserInfo = computed(() => {
+  return examplePiniaStore.userInfo;
+});
 
-const clearUserInfo = () => {
-  userInfo.value = null;
-  userLoad.value = false;
-  userError.value = null;
-};
+const computedLoading = computed(() => {
+  return examplePiniaStore.loading;
+});
+
+const computedError = computed(() => {
+  return examplePiniaStore.error;
+});
 </script>
 
 <template>
   <TemplateSlot>
     <template #icon>
-      <IconModule />
+      <AtomIcon name="module" />
     </template>
     <template #heading>Axios Example</template>
     <template #content>
       <p>
-        <AtomButton v-if="!userInfo" @click.stop="getUserInfo">Get Data</AtomButton>
-        <AtomButton v-else @click.stop="clearUserInfo">Clear Data</AtomButton>
+        <AtomButton v-if="!computedUserInfo" @click.stop="examplePiniaStore.getUserInfo">Get Data</AtomButton>
+        <AtomButton v-else @click.stop="examplePiniaStore.clearUserInfo">Clear Data</AtomButton>
       </p>
-      <p v-if="userLoad">Loading</p>
-      <p v-if="userInfo">{{ userInfo }}</p>
-      <p v-if="userError">{{ userError }}</p>
-      <p>Axios <a href="https://axios-http.com/docs/intro" target="_blank" rel="noopener">official documentation</a></p>
+      <p v-if="computedLoading">Loading</p>
+      <p v-if="computedUserInfo">{{ computedUserInfo }}</p>
+      <p v-if="computedError">{{ computedError }}</p>
+      <p>Official documentation: <AtomLink :link="examplePiniaStore.getLink('link-axios')" /></p>
     </template>
   </TemplateSlot>
 </template>

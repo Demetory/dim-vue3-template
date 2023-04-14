@@ -15,7 +15,7 @@ const edges = [
 
 <template>
   <div class="scene">
-    <router-link :to="{ name: 'home' }">
+    <RouterLink :to="{ name: 'ViewHome' }">
       <div class="cube">
         <span
           v-for="(edge, index) in edges"
@@ -25,7 +25,7 @@ const edges = [
           <img alt="Dim Vue 3 Template" :src="useImage(edge.img)" width="100" height="100" />
         </span>
       </div>
-    </router-link>
+    </RouterLink>
   </div>
 </template>
 
