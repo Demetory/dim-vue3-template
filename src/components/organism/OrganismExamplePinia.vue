@@ -51,11 +51,5 @@ p:not(:last-of-type) {
     max-width: 180px;
     margin-bottom: calc(grid.$gap / 2);
   }
-
-  /*
-  @media screen and (max-width: 540px) {
-      margin-top: calc(grid.$gap / 2);
-    }
-*/
 }
 </style>

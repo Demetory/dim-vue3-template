@@ -14,4 +14,4 @@ Components: Vite 4, Vue 3, Pinia 2, VueUse 10, Axios, ESlint 8, Prettier 2
 
 /* PROJECT UPDATES */
 Created: 2022-12-01 18-40
-Last modified: 2023-04-15 17-30
+Last modified: 2023-04-16 03-30
