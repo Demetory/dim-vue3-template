@@ -1,11 +1,12 @@
 // Core
 import { createRouter, createWebHistory } from "vue-router";
+// Modules
+import { useExamplePiniaStore } from "@/stores/examplePinia";
 // Components
 import ViewHome from "@/views/ViewHome.vue";
 
 // Data
 const defaultTitle = import.meta.env.VITE_APP_TITLE;
-const isAuthenticated = false;
 
 // Routes
 const routes = [
@@ -68,7 +69,9 @@ router.afterEach((to) => {
 });
 
 router.beforeEach((to) => {
-  if (to.name !== "ViewLogin" && to.meta.auth && !isAuthenticated) {
+  const examplePiniaStore = useExamplePiniaStore();
+
+  if (to.name !== "ViewLogin" && to.meta.auth && !examplePiniaStore.authenticated) {
     return { name: "ViewLogin" };
   }
 });

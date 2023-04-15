@@ -22,7 +22,7 @@ const computedLoading = computed(() => {
 });
 
 const computedError = computed(() => {
-  return examplePiniaStore.error;
+  return examplePiniaStore.errorMsg;
 });
 </script>
 
@@ -34,13 +34,27 @@ const computedError = computed(() => {
     <template #heading>Axios Example</template>
     <template #content>
       <p>
-        <AtomButton v-if="!computedUserInfo" @click.stop="examplePiniaStore.getUserInfo">Get Data</AtomButton>
-        <AtomButton v-else @click.stop="examplePiniaStore.clearUserInfo">Clear Data</AtomButton>
+        <AtomButton
+          v-if="!computedUserInfo"
+          :loading="computedLoading"
+          label="Get Data"
+          @click="examplePiniaStore.getUserInfo"
+        />
+        <AtomButton v-else :loading="computedLoading" label="Clear Data" @click="examplePiniaStore.clearUserInfo" />
       </p>
       <p v-if="computedLoading">Loading</p>
       <p v-if="computedUserInfo">{{ computedUserInfo }}</p>
-      <p v-if="computedError">{{ computedError }}</p>
+      <p v-if="computedError" class="error">{{ computedError }}</p>
       <p>Official documentation: <AtomLink :link="examplePiniaStore.getLink('link-axios')" /></p>
     </template>
   </TemplateSlot>
 </template>
+
+<style scoped lang="scss">
+p:not(:last-of-type) {
+  margin-bottom: calc(grid.$gap / 2);
+  .atom-button {
+    min-width: 110px;
+  }
+}
+</style>

@@ -10,7 +10,7 @@ import { navi } from "@/assets/data/navi";
         {{ link.text }}
       </RouterLink>
     </p>
-    <p>Last update: 2023-04-14</p>
+    <p>Last update: 2023-04-15</p>
   </nav>
 </template>
 

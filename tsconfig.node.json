@@ -10,5 +10,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["vite.config.ts", "vitest.config.*", "cypress.config.*", "playwright.config.*"]
+  "include": ["vite.config.ts", "tsconfig.vitest.json", "cypress.config.*", "playwright.config.*"]
 }

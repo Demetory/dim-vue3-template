@@ -10,6 +10,16 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+html.theme-light {
+  color: colors.$font-main;
+  background-color: colors.$bg-main;
+}
+
+html.theme-dark {
+  color: colors.$grey;
+  background-color: colors.$font-main;
+}
+
 // App border around
 html,
 body {
@@ -18,8 +28,8 @@ body {
     content: " ";
     backface-visibility: hidden;
     position: fixed;
-    background-color: colors.$bg-border-app;
     z-index: grid.$zindex-border-app;
+    transition: background-color grid.$transition;
   }
 }
 
@@ -71,6 +81,34 @@ body {
   }
 }
 
+html.theme-light {
+  &::after,
+  &::before {
+    background-color: colors.$bg-border-app;
+  }
+
+  body {
+    &::after,
+    &::before {
+      background-color: colors.$bg-border-app;
+    }
+  }
+}
+
+html.theme-dark {
+  &::after,
+  &::before {
+    background-color: colors.$black;
+  }
+
+  body {
+    &::after,
+    &::before {
+      background-color: colors.$black;
+    }
+  }
+}
+
 // Containers
 #app {
   flex-direction: row;
@@ -96,4 +134,33 @@ h1 {
 
 h2 {
   @include font(2.4rem, 2.4rem, 700);
+}
+
+.error {
+  color: colors.$red;
+}
+
+// Links
+.theme-dark a {
+  &:active,
+  &.router-link-exact-active {
+    color: colors.$grey;
+  }
+}
+
+a {
+  color: colors.$link-main;
+  transition: color grid.$transition;
+  text-decoration: none;
+
+  &:hover {
+    color: colors.$link-main-hover;
+  }
+
+  &:active,
+  &.router-link-exact-active {
+    color: colors.$link-main-active;
+    cursor: default;
+    text-decoration: none;
+  }
 }

@@ -108,4 +108,16 @@ const computedIcon = computed(() => {
     }
   }
 }
+
+.theme-dark {
+  .atom-icon {
+    &--primary {
+      :deep(svg) {
+        path {
+          fill: colors.$grey;
+        }
+      }
+    }
+  }
+}
 </style>

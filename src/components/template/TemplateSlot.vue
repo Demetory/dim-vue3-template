@@ -18,10 +18,7 @@
   display: flex;
   margin-top: 0;
   padding-left: 80px;
-
-  &:not(:last-of-type) {
-    padding-bottom: 2.8rem;
-  }
+  padding-bottom: 2.8rem;
 
   &::before,
   &::after {
@@ -33,11 +30,11 @@
   }
 
   &::before {
-    bottom: calc(50% + 25px);
+    bottom: calc(50% + 25px + 14px);
   }
 
   &::after {
-    top: calc(50% + 25px);
+    top: calc(50% + 25px - 14px);
   }
 
   &:first-of-type::before,
@@ -48,7 +45,7 @@
   &__icon {
     position: absolute;
     display: flex;
-    top: calc(50% - 25px);
+    top: calc(50% - 25px - 14px);
     left: 0;
     place-items: center;
     place-content: center;

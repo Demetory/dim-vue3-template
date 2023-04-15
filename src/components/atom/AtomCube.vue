@@ -1,7 +1,6 @@
 <script setup lang="ts">
 // Composables
 import { useImage } from "@/composables/useImage";
-
 // Data
 const edges = [
   { id: 1, name: "front", className: "black", img: "logo-black.svg" },
@@ -14,8 +13,8 @@ const edges = [
 </script>
 
 <template>
-  <div class="scene">
-    <RouterLink :to="{ name: 'ViewHome' }">
+  <RouterLink :to="{ name: 'ViewHome' }">
+    <div class="scene">
       <div class="cube">
         <span
           v-for="(edge, index) in edges"
@@ -25,15 +24,14 @@ const edges = [
           <img alt="Dim Vue 3 Template" :src="useImage(edge.img)" width="100" height="100" />
         </span>
       </div>
-    </RouterLink>
-  </div>
+    </div>
+  </RouterLink>
 </template>
 
 <style scoped lang="scss">
 $cube-size: 100px;
 $cube-bg-color: #000;
 $cube-duration: 60s;
-
 $rotate-default: (
   "front": rotateY(0deg),
   "right": rotateY(90deg),
@@ -42,7 +40,6 @@ $rotate-default: (
   "top": rotateX(90deg),
   "bottom": rotateX(-90deg),
 );
-
 $rotate-animaton: (
   0%: rotateY(0deg),
   16.6%: rotateX(90deg),
@@ -52,16 +49,15 @@ $rotate-animaton: (
   82%: rotateY(90deg),
   100%: rotateY(0deg),
 );
-
 .scene {
+  position: relative;
   display: flex;
   width: $cube-size;
   height: $cube-size;
   justify-content: center;
   align-items: center;
-  perspective: $cube-size;
+  perspective: 1000;
 }
-
 .cube {
   width: $cube-size;
   height: $cube-size;
@@ -75,7 +71,6 @@ $rotate-animaton: (
   animation-duration: $cube-duration;
   transform-style: preserve-3d;
   transform-origin: center;
-
   &-edge {
     position: absolute;
     width: $cube-size;
@@ -84,14 +79,12 @@ $rotate-animaton: (
     text-align: center;
     background-color: $cube-bg-color;
   }
-
   @each $name, $rotate in $rotate-default {
     .cube-#{$name} {
       transform: $rotate translateZ(calc($cube-size/2));
     }
   }
 }
-
 @keyframes spincube {
   @each $percent, $rotate in $rotate-animaton {
     #{$percent} {

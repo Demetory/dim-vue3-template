@@ -12,10 +12,11 @@ import { IUser } from "@/types/IUser";
 const useExamplePiniaStore = defineStore("examplePiniaStore", () => {
   // State
   const count = ref(0);
-  const error = ref<Object | null>();
+  const errorMsg = ref<Object | null>();
   const input = ref("Test");
   const loading = ref(false);
   const userInfo = ref<IUser | null>();
+  const authenticated = ref(false);
 
   // Methods
   const doIncrement = () => {
@@ -36,30 +37,32 @@ const useExamplePiniaStore = defineStore("examplePiniaStore", () => {
       .get(import.meta.env.VITE_API_URL)
       .then((response) => {
         userInfo.value = response.data as IUser;
-        loading.value = false;
-        error.value = null;
+        errorMsg.value = null;
       })
       .catch((error) => {
-        loading.value = false;
-        error.value = error;
+        errorMsg.value = error;
         throw Error(error);
+      })
+      .finally(() => {
+        loading.value = false;
       });
   };
 
   const clearUserInfo = () => {
     userInfo.value = null;
     loading.value = false;
-    error.value = null;
+    errorMsg.value = null;
   };
 
   // Return
   return {
     count,
-    error,
+    errorMsg,
     input,
     links,
     loading,
     userInfo,
+    authenticated,
     doIncrement,
     doDecrement,
     getLink,
