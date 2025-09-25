@@ -8,10 +8,10 @@ Demetrey <demetrey.ru>
 
 /* TECHNOLOGIES */
 Software: VSCode
-Standards: HTML5, CSS3/SCSS, JavaScript ES2019, TypeScript 5, Script Setup SFC
-Engines: Node 18, NPM 9
-Components: Vite 4, Vue 3, Pinia 2, VueUse 10, Axios, ESlint 8, Prettier 2
+Standards: HTML5, CSS3/SCSS, JavaScript ES2020, TypeScript 5, Script Setup SFC
+Engines: Node 22, NPM 11
+Components: Vite 7, Vue 3, Vue Rounter 4, Pinia 3, VueUse 13, Axios, ESlint 9, Prettier 3
 
 /* PROJECT UPDATES */
 Created: 2022-12-01 18-40
-Last modified: 2023-04-16 03-30
+Last modified: 2025-09-25 20-00

@@ -1,9 +1,9 @@
 // Core
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory } from 'vue-router';
 // Modules
-import { useExamplePiniaStore } from "@/stores/examplePinia";
+import { useExamplePiniaStore } from '@/stores/examplePinia';
 // Components
-import ViewHome from "@/views/ViewHome.vue";
+import ViewHome from '@/views/ViewHome.vue';
 
 // Data
 const defaultTitle = import.meta.env.VITE_APP_TITLE;
@@ -11,68 +11,68 @@ const defaultTitle = import.meta.env.VITE_APP_TITLE;
 // Routes
 const routes = [
   {
-    path: "/",
-    name: "ViewHome",
-    component: ViewHome,
+    path: '/',
+    name: 'ViewHome',
+    component: ViewHome
   },
   {
-    path: "/examples",
-    name: "ViewExamples",
-    component: () => import("@/views/ViewExamples.vue"),
+    path: '/examples',
+    name: 'ViewExamples',
+    component: () => import('@/views/ViewExamples.vue'),
     meta: {
-      title: "Code Examples",
-    },
+      title: 'Code Examples'
+    }
   },
   {
-    path: "/secret",
-    name: "ViewSecret",
-    component: () => import("@/views/ViewSecret.vue"),
+    path: '/secret',
+    name: 'ViewSecret',
+    component: () => import('@/views/ViewSecret.vue'),
     meta: {
-      title: "Secret Page",
-      auth: true,
-    },
+      title: 'Secret Page',
+      auth: true
+    }
   },
   {
-    path: "/login",
-    name: "ViewLogin",
-    component: () => import("@/views/ViewLogin.vue"),
+    path: '/login',
+    name: 'ViewLogin',
+    component: () => import('@/views/ViewLogin.vue'),
     meta: {
-      title: "Login",
-    },
+      title: 'Login'
+    }
   },
   {
-    path: "/:catchAll(.*)*",
-    name: "PageNotFound",
-    component: () => import("@/views/ViewNotFound.vue"),
+    path: '/:catchAll(.*)*',
+    name: 'PageNotFound',
+    component: () => import('@/views/ViewNotFound.vue'),
     meta: {
-      title: "Page not Found",
-    },
-  },
+      title: 'Page not Found'
+    }
+  }
 ];
 
 // Create Router
 const router = createRouter({
   scrollBehavior(to) {
     if (to.hash) {
-      return { el: to.hash, behavior: "smooth" };
+      return { el: to.hash, behavior: 'smooth' };
     } else {
       return { top: 0 };
     }
   },
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes,
+  routes
 });
 
 // Navigation Guards
 router.afterEach((to) => {
-  document.title = typeof to.meta.title === "string" ? defaultTitle + " | " + to.meta.title : defaultTitle;
+  document.title = typeof to.meta.title === 'string' ? defaultTitle + ' | ' + to.meta.title : defaultTitle;
 });
 
 router.beforeEach((to) => {
   const examplePiniaStore = useExamplePiniaStore();
 
-  if (to.name !== "ViewLogin" && to.meta.auth && !examplePiniaStore.authenticated) {
-    return { name: "ViewLogin" };
+  if (to.name !== 'ViewLogin' && to.meta.auth && !examplePiniaStore.authenticated) {
+    return { name: 'ViewLogin' };
   }
 });
 

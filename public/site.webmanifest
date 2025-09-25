@@ -6,7 +6,16 @@
     {
       "src": "images/icons/icon.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "images/icons/cover.png",
+      "sizes": "968x504",
+      "type": "image/png",
+      "form_factor": "wide"
     }
   ],
   "id": "/?",
@@ -14,5 +23,5 @@
   "background_color": "#fafafa",
   "theme_color": "#fafafa",
   "display": "standalone",
-  "orientation": "landscape"
+  "orientation": "landscape-primary"
 }

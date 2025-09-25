@@ -1,6 +1,6 @@
 # Vue 3 Starter
 
-- [Vue 3](https://vuejs.org/) + [Vite 4](https://vitejs.dev/) Minimalistic Starter Template
+- [Vue 3](https://vuejs.org/) + [Vite 7](https://vitejs.dev/) Minimalistic Starter Template
 - Built with [TypeScript 5](https://www.typescriptlang.org/) and [Script Setup SFC](https://vuejs.org/api/sfc-script-setup.html)
   <br/><br/>
 
@@ -13,7 +13,7 @@
 - CSS normalization + SCSS Mixins & Maps
 - Configured router (including transitions and navigation guards)
 - Simple code examples for Storage, Composables, TypeScript, Modules
-- [ESLint 8](https://eslint.org/) + [Prettier 2](https://prettier.io/) for better code quality
+- [ESLint](https://eslint.org/) + [Prettier](https://prettier.io/) for better code quality
 - Cypress + Vitest for testing
 
 ## Preview
@@ -25,12 +25,12 @@
 
 ## Engines
 
-- [Node.js](https://nodejs.org/en/): >= 18.14.2
-- [npm](https://www.npmjs.com/): >= 9.5.0
+- [Node.js](https://nodejs.org/en/): >= 22.17 .0
+- [npm](https://www.npmjs.com/): >= 11.4.0
 
 ## Recommended IDE
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+- [VSCode](https://code.visualstudio.com/)
 
 ## Installed Modules
 

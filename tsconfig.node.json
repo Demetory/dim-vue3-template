@@ -1,14 +1,11 @@
 {
+  "extends": "@tsconfig/node21/tsconfig.json",
+  "include": ["vite.config.*", "vitest.config.*", "cypress.config.*", "nightwatch.conf.*", "playwright.config.*"],
   "compilerOptions": {
     "composite": true,
-    "types": ["node"],
+    "noEmit": true,
     "module": "ESNext",
-    "moduleResolution": "Node",
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "include": ["vite.config.ts", "tsconfig.vitest.json", "cypress.config.*", "playwright.config.*"]
+    "moduleResolution": "Bundler",
+    "types": ["node"]
+  }
 }

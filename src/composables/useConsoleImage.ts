@@ -18,7 +18,8 @@ const useConsoleImage = (image: string) => {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    `
+    `,
+    `Design the Planet`
   );
 };
 

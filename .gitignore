@@ -7,6 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Folders
 node_modules
 .DS_Store
 dist
@@ -14,6 +15,7 @@ dist-ssr
 coverage
 *.local
 
+# E2E: Cypress
 /cypress/videos/
 /cypress/screenshots/
 
@@ -29,3 +31,4 @@ coverage
 
 # Custom Files
 2Do.txt
+descript.ion

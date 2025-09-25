@@ -1,6 +1,9 @@
 <script setup lang="ts">
 // Modules
-import { navi } from "@/assets/data/navi";
+import { navi } from '@/assets/data/navi';
+
+// Data
+const lastUpdate = import.meta.env.VITE_INFO_UPDATE as String;
 </script>
 
 <template>
@@ -10,7 +13,7 @@ import { navi } from "@/assets/data/navi";
         {{ link.text }}
       </RouterLink>
     </p>
-    <p>Last update: 2023-04-16</p>
+    <p>Last update: {{ lastUpdate }}</p>
   </nav>
 </template>
 
